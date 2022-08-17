@@ -3,8 +3,9 @@ Map pipelineConfig = [
     role_name : params.role_name,
 ]
 
-def getlist:
+def getlist(){
     return ["one", "two"]
+}
 
 pipeline {
     parameters {
