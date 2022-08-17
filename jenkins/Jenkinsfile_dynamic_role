@@ -4,7 +4,7 @@ Map pipelineConfig = [
 ]
 
 def getlist(){
-    files = findFiles()
+    files = findFiles(glob: '')
     return files
 }
 
