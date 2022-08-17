@@ -8,6 +8,11 @@ def getlist(){
 }
 
 pipeline {
+
+    agent {
+        label 'Master'
+    }
+
     parameters {
         choice(
             name: 'role',
