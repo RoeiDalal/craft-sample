@@ -1,0 +1,31 @@
+#!groovy
+Map pipelineConfig = [
+    role_name : params.role_name,
+]
+
+def getlist:
+    return ["one", "two"]
+
+pipeline {
+    parameters {
+        choice(
+            name: 'role',
+            choices: getlist(),
+            description: 'list of all the role names'
+    )
+    }
+
+    options {
+        timeout(time: 90, unit: 'MINUTES')
+        ansiColor('xterm')
+    }
+
+    stages {
+        stage('set build name and description') {
+            steps {
+                script {
+                    currentBuild.displayName = "creating ec2: ${params.my_ec2_tag}"
+                }
+            }
+        }
+}
