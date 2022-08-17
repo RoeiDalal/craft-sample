@@ -10,7 +10,7 @@ def getlist(){
 pipeline {
 
     agent {
-        label 'Master'
+        label 'Built-In Node'
     }
 
     parameters {
