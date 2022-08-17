@@ -4,7 +4,8 @@ Map pipelineConfig = [
 ]
 
 def getlist(){
-    return ["one", "two"]
+    files = findFiles()
+    return files
 }
 
 pipeline {
